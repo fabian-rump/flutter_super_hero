@@ -47,6 +47,7 @@ app.*.map.json
 
 # generated files
 *.g.dart
+*.freezed.dart
 
 # auth
 network/lib/auth/**
