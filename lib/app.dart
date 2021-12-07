@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_super_hero/home/HomeWidget.dart';
+import 'package:flutter_super_hero/home/home_widget.dart';
 
 class SuperHeroWidget extends StatelessWidget {
   @override
