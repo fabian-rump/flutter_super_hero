@@ -4,6 +4,8 @@ import 'package:database/model/super_hero.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_super_hero/super_hero_details/comic_item_widget.dart';
+import 'package:flutter_super_hero/super_hero_details/super_hero_details_thumbail_fullscreen_widget.dart';
+import 'package:flutter_super_hero/super_hero_details/super_hero_details_thumbnail_fullscreen_arguments.dart';
 import 'package:shared/ui/padding_parent.dart';
 
 class SuperHeroDetailsFetchedWidget extends StatelessWidget {
@@ -23,9 +25,15 @@ class SuperHeroDetailsFetchedWidget extends StatelessWidget {
         physics: ScrollPhysics(),
         child: Column(
           children: [
-            Image(
-              fit: BoxFit.cover,
-              image: NetworkImage(_superHero.thumbnailLandscape),
+            GestureDetector(
+              onTap: () => _openThumbnailFullscreen(context),
+              child: Hero(
+                tag: HERO_THUMBNAIL,
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(_superHero.thumbnailLandscape),
+                ),
+              ),
             ),
             PaddingParent(Text(
               _superHero.description,
@@ -42,6 +50,14 @@ class SuperHeroDetailsFetchedWidget extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  _openThumbnailFullscreen(BuildContext context) {
+    Navigator.pushNamed(
+      context,
+      SuperHeroDetailsThumbnailFullscreenWidget.routeName,
+      arguments: SuperHeroDetailsThumbnailFullscreenArguments(_superHero.thumbnailLandscape),
     );
   }
 }
