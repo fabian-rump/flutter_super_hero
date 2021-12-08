@@ -7,7 +7,7 @@ abstract class SuperHeroDao {
   Future<List<SuperHero>> findAll();
 
   @Query('SELECT * FROM SuperHero WHERE id = :id')
-  Stream<SuperHero?> findById(int id);
+  Future<SuperHero?> findById(int id);
 
   @insert
   Future<void> insertSuperHero(SuperHero superHero);

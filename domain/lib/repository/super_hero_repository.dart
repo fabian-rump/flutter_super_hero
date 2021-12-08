@@ -17,6 +17,11 @@ class SuperHeroRepository {
     return newSuperHeroes;
   }
 
+  Future<SuperHero?> getSuperHeroById(int id) async {
+    final superHero = await _superHeroDao.findById(id);
+    return superHero;
+  }
+
   Future _persistSuperHeroes() async {
     final response = await _marvelService.fetchCharacters();
     final superHeroes = response.data?.results

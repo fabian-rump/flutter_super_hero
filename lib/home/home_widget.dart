@@ -17,7 +17,9 @@ class HomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Super Heroes"),),
+        appBar: AppBar(
+          title: Text("Super Heroes"),
+        ),
         body: BlocBuilder(
           bloc: _bloc,
           builder: (context, state) {
