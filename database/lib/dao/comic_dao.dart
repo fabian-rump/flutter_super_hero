@@ -9,6 +9,9 @@ abstract class ComicDao {
   @Query('SELECT * FROM Comic WHERE id = :id')
   Stream<Comic?> findById(int id);
 
+  @Query('SELECT * FROM Comic WHERE superHeroId = :id')
+  Future<List<Comic>?> findAllBySuperHeroId(String id);
+
   @insert
   Future<void> insertComic(Comic comic);
 
