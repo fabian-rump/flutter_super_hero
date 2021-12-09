@@ -8,11 +8,11 @@ import 'package:flutter_super_hero/super_hero_details/fetched/super_hero_comics_
 import 'package:flutter_super_hero/super_hero_details/fetched/super_hero_comics_event.dart';
 import 'package:flutter_super_hero/super_hero_details/fetched/super_hero_comics_fetched_widget.dart';
 import 'package:flutter_super_hero/super_hero_details/fetched/super_hero_comics_state.dart';
-import 'package:flutter_super_hero/super_hero_details/super_hero_details_thumbail_fullscreen_widget.dart';
-import 'package:flutter_super_hero/super_hero_details/super_hero_details_thumbnail_fullscreen_arguments.dart';
 import 'package:shared/get_it_provider.dart';
 import 'package:shared/ui/loading_widget.dart';
 import 'package:shared/ui/padding_parent.dart';
+import 'package:shared/ui/thumbnail/thumbail_fullscreen_widget.dart';
+import 'package:shared/ui/thumbnail/thumbnail_fullscreen_arguments.dart';
 
 class SuperHeroDetailsFetchedWidget extends StatelessWidget {
   final _bloc = getIt<SuperHeroComicsBloc>();
@@ -68,8 +68,8 @@ class SuperHeroDetailsFetchedWidget extends StatelessWidget {
   _openThumbnailFullscreen(BuildContext context) {
     Navigator.pushNamed(
       context,
-      SuperHeroDetailsThumbnailFullscreenWidget.routeName,
-      arguments: SuperHeroDetailsThumbnailFullscreenArguments(_superHero.thumbnailLandscape),
+      ThumbnailFullscreenWidget.routeName,
+      arguments: ThumbnailFullscreenArguments(_superHero.thumbnailLandscape, HERO_THUMBNAIL),
     );
   }
 }

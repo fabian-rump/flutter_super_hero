@@ -2,6 +2,7 @@ import 'package:database/model/comic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_super_hero/comic/comic_arguments.dart';
 import 'package:flutter_super_hero/comic/comic_widget.dart';
 
 class ComicItemWidget extends StatelessWidget {
@@ -53,7 +54,7 @@ class ComicItemWidget extends StatelessWidget {
     Navigator.pushNamed(
       context,
       ComicWidget.routeName,
-      arguments: ComicWidget(),
+      arguments: ComicArguments(_comic.id),
     );
   }
 

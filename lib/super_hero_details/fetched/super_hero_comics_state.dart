@@ -1,7 +1,5 @@
-import 'dart:ui';
 
 import 'package:database/model/comic.dart';
-import 'package:database/model/super_hero.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'super_hero_comics_state.freezed.dart';

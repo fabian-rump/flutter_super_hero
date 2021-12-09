@@ -17,4 +17,6 @@ class ComicRepository {
   }
 
   Future<List<Comic>?> getComicsBySuperHeroId(String id) => _comicDao.findAllBySuperHeroId(id);
+
+  Future<Comic?> getComicById(int id) => _comicDao.findById(id);
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_super_hero/super_hero_details/super_hero_details_thumbnail_fullscreen_arguments.dart';
+import 'package:shared/ui/thumbnail/thumbnail_fullscreen_arguments.dart';
 
-class SuperHeroDetailsThumbnailFullscreenWidget extends StatelessWidget {
-  static const routeName = '/superHeroThumbnailFullscreen';
-  final SuperHeroDetailsThumbnailFullscreenArguments _arguments;
+class ThumbnailFullscreenWidget extends StatelessWidget {
+  static const routeName = '/thumbnailFullscreen';
+  final ThumbnailFullscreenArguments _arguments;
 
-  const SuperHeroDetailsThumbnailFullscreenWidget(this._arguments);
+  const ThumbnailFullscreenWidget(this._arguments);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SuperHeroDetailsThumbnailFullscreenWidget extends StatelessWidget {
         ),
         body: Center(
           child: Hero(
-            tag: HERO_THUMBNAIL,
+            tag: _arguments.heroTag,
             child: Image(
               fit: BoxFit.cover,
               image: NetworkImage(_arguments.url),
@@ -34,4 +34,5 @@ class SuperHeroDetailsThumbnailFullscreenWidget extends StatelessWidget {
   }
 }
 
-const HERO_THUMBNAIL = "thumbnail";
+const HERO_THUMBNAIL = "thumbnailHero";
+const COMIC_THUMBNAIL = "thumbnailComic";
