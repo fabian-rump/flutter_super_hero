@@ -5,9 +5,10 @@ import 'package:flutter_super_hero/home/home_state.dart';
 import 'package:shared/get_it_provider.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  final _superHeroRepository = getIt<SuperHeroRepository>();
+  late SuperHeroRepository  _superHeroRepository;
 
-  HomeBloc(HomeState initialState) : super(HomeState.loading()) {
+  HomeBloc(HomeState initialState, SuperHeroRepository superHeroRepository) : super(HomeState.loading()) {
+    _superHeroRepository = superHeroRepository;
     on<HomeFetchSuperHeroesEvent>(_fetchSuperHeroes);
   }
 

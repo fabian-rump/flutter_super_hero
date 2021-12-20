@@ -48,6 +48,7 @@ app.*.map.json
 # generated files
 *.g.dart
 *.freezed.dart
+*.mocks.dart
 
 # auth
 network/lib/auth/**

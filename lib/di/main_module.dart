@@ -1,3 +1,4 @@
+import 'package:domain/repository/super_hero_repository.dart';
 import 'package:flutter_super_hero/comic/comic_bloc.dart';
 import 'package:flutter_super_hero/comic/comic_state.dart';
 import 'package:flutter_super_hero/home/home_bloc.dart';
@@ -9,7 +10,7 @@ import 'package:flutter_super_hero/super_hero_details/super_hero_details_state.d
 import 'package:shared/get_it_provider.dart';
 
 void registerMainModule() {
-  getIt.registerSingleton<HomeBloc>(HomeBloc(HomeState.loading()));
+  getIt.registerSingleton<HomeBloc>(HomeBloc(HomeState.loading(), getIt<SuperHeroRepository>()));
   getIt.registerSingleton<SuperHeroDetailsBloc>(SuperHeroDetailsBloc(SuperHeroDetailsState.loading()));
   getIt.registerSingleton<SuperHeroComicsBloc>(SuperHeroComicsBloc(SuperHeroComicsState.loading()));
   getIt.registerSingleton<ComicBloc>(ComicBloc(ComicState.loading()));
